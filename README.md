@@ -1,0 +1,1 @@
+Script pour générer des descriptions d'annonces sur Facebook Marketplace
