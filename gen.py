@@ -16,9 +16,7 @@ genai.configure(api_key=API_KEY)
 def generate_description(product_name):
     """Generates an engaging product description using Google Gemini API."""
     prompt = f"""
-    Generate an engaging and concise product description for a {product_name}. 
-    Mention key features, specifications, and a persuasive selling point. 
-    Keep it under 150 words.
+    Generate a concise description without text formatting and a touch of humour for my Facebook Marketplace ad of {product_name}.
     """
 
     model = genai.GenerativeModel("gemini-pro")
@@ -33,5 +31,7 @@ if __name__ == "__main__":
 
     product_name = " ".join(sys.argv[1:])  # Join all command-line arguments to handle multi-word names
     description = generate_description(product_name)
-    print("\nGenerated Description:\n")
-    print(description)
+    with open("out.txt", "w", encoding="utf-8") as file:
+        file.write("Pickup is in Rutherford SW, T6W1J6.\n\n")
+        file.write("I ignore messages asking if it's still available, let's not waste each other's time please.\n\n")
+        file.write(description)
